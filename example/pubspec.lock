@@ -88,7 +88,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-  signalr_flutter:
+  signalr_flutter_appbundle:
     dependency: "direct main"
     description:
       path: ".."

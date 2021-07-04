@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:signalr_flutter/signalr_flutter.dart';
+import 'package:signalr_flutter_appbundle/signalr_flutter_appbundle.dart';
 
 void main() async {
   const MethodChannel channel = MethodChannel('signalR');
@@ -20,7 +20,9 @@ void main() async {
           };
         default:
           return PlatformException(
-              code: "Error", message: "No implementation found for method ${methodCall.method}");
+              code: "Error",
+              message:
+                  "No implementation found for method ${methodCall.method}");
       }
     });
   });

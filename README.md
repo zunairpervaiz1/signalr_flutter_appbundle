@@ -1,6 +1,6 @@
 # signalr_flutter
 
-A flutter plugin for .net SignalR client.
+A flutter plugin for .net SignalR client with updated signalr java sdk for appbundle builds.
 
 ## Usage
 

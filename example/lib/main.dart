@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:signalr_flutter/signalr_flutter.dart';
+import 'package:signalr_flutter_appbundle/signalr_flutter_appbundle.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,9 +25,7 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    signalR = SignalR(
-        '<Your server url here>',
-        "<Your hub name here>",
+    signalR = SignalR('<Your server url here>', "<Your hub name here>",
         hubMethods: ["<Your Hub Method Names>"],
         statusChangeCallback: _onStatusChange,
         hubCallback: _onNewMessage);
