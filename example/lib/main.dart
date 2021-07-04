@@ -25,8 +25,8 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    signalR = SignalR('<Your server url here>', "<Your hub name here>",
-        hubMethods: ["<Your Hub Method Names>"],
+    signalR = SignalR('http://10.0.0.198/ClubAppSignalR/signalr', "chatHub",
+        hubMethods: ["RecieveMessage"],
         statusChangeCallback: _onStatusChange,
         hubCallback: _onNewMessage);
   }
@@ -59,9 +59,10 @@ class _MyAppState extends State<MyApp> {
             final isConnected = await signalR.isConnected ?? false;
             if (!isConnected) {
               await signalR.connect();
-            } else {
-              signalR.stop();
             }
+            // else {
+            //   signalR.stop();
+            // }
           },
         ),
       ),
@@ -81,8 +82,10 @@ class _MyAppState extends State<MyApp> {
   }
 
   _buttonTapped() async {
-    final res = await signalR.invokeMethod<dynamic>("<Your Method Name>",
-        arguments: ["<Your Method Arguments>"]).catchError((error) {
+    final res = await signalR.invokeMethod<dynamic>("JoinGroup", arguments: [
+      'username',
+      'group',
+    ]).catchError((error) {
       print(error.toString());
     });
     final snackBar = SnackBar(content: Text('SignalR Method Response: $res'));
