@@ -3,15 +3,15 @@
 # Run `pod lib lint signalr_flutter.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'signalr_flutter'
+  s.name             = 'signalr_flutter_appbundle'
   s.version          = '0.0.1'
   s.summary          = 'A new flutter plugin project.'
   s.description      = <<-DESC
 A new flutter plugin project.
                        DESC
-  s.homepage         = 'https://github.com/AS-Devs/signalr_flutter'
+  s.homepage         = 'https://github.com/tmura-ido/signalr_flutter_appbundle'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Ayon Das' => 'ayantorres@gmail.com' }
+  s.author           = { 'Ayon Das' => 'ayantorres@gmail.com', 'Ido Zahavy' => 'idozahavy@gmail.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
