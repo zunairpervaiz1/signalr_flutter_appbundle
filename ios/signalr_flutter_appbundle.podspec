@@ -12,7 +12,7 @@ A new flutter plugin project.
   s.homepage         = 'https://github.com/tmura-ido/signalr_flutter_appbundle'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Ayon Das' => 'ayantorres@gmail.com', 'Ido Zahavy' => 'idozahavy@gmail.com' }
-  s.source           = { :path => '.' }
+  s.source           = { :git => 'https://github.com/tmura-ido/signalr_flutter_appbundle.git' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.platform = :ios, '8.0'

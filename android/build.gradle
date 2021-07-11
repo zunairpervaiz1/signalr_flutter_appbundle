@@ -1,4 +1,4 @@
-group 'dev.asdevs.signalr_flutter'
+group 'dev.asdevs.signalr_flutter_appbundle'
 version '1.0-SNAPSHOT'
 
 buildscript {

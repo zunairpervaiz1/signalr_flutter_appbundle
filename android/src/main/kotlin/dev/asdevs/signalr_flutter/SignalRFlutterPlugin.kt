@@ -1,4 +1,4 @@
-package dev.asdevs.signalr_flutter
+package dev.asdevs.signalr_flutter_appbundle
 
 import androidx.annotation.NonNull;
 
