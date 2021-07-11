@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "signalr_flutter",
+            "name": "signalr_flutter_appbundle",
             "request": "launch",
             "type": "dart"
         },

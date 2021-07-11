@@ -1,4 +1,4 @@
-# signalr_flutter
+# signalr_flutter_appbundle
 
 A flutter plugin for .net SignalR client with updated signalr java sdk for appbundle builds.
 
