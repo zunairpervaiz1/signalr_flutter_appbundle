@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text('Connection Status: $_signalRStatus\n',
-                  style: Theme.of(context).textTheme.headline5),
+                  style: Theme.of(context).textTheme.headlineSmall),
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: ElevatedButton(
