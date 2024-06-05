@@ -340,14 +340,34 @@ open class SignalR: NSObject, WKNavigationDelegate, WKScriptMessageHandler {
     } else if let data: Any = json["data"] {
       received?(data)
     } else if let hubName = json["hub"] as? String {
-      let callbackID = json["id"] as? String
-      let method = json["method"] as? String
-      let arguments = json["arguments"] as? [AnyObject]
-      let hub = hubs[hubName]
+        print("hubName: \(hubName)")
 
-      if let method = method, let callbackID = callbackID, let handlers = hub?.handlers[method], let handler = handlers[callbackID] {
-        handler(arguments)
-      }
+        guard let callbackID = json["id"] as? String else {
+            print("Error: Missing 'id' in json")
+            return
+        }
+        guard let method = json["method"] as? String else {
+            print("Error: Missing 'method' in json")
+            return
+        }
+        guard let arguments = json["arguments"] as? [AnyObject] else {
+            print("Error: Missing or invalid 'arguments' in json")
+            return
+        }
+        guard let hub = hubs[hubName] else {
+            print("Error: No hub found for name \(hubName)")
+            return
+        }
+        guard let handlers = hub.handlers[method] else {
+            print("Error: No handlers found for method \(method)")
+            return
+        }
+        guard let handler = handlers[callbackID] else {
+            print("Error: No handler found for callbackID \(callbackID)")
+            return
+        }
+
+        handler(arguments.count > 0 ? arguments : [""])
     }
   }
 
